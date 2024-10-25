@@ -10,14 +10,4 @@ export default class DiscountsController {
   async create({ view }: HttpContext) {
     return view.render('adddiscount')
   }
-
-  async store({ request }: HttpContext) {}
-
-  async show({ params }: HttpContext) {}
-
-  async edit({ params }: HttpContext) {}
-
-  async update({ params, request }: HttpContext) {}
-
-  async destroy({ params }: HttpContext) {}
 }
