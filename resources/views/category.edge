@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>User</title>
+    <title>Category</title>
     @include('partials/head')
     <link href="//cdn.datatables.net/2.0.2/css/dataTables.dataTables.min.css" rel="stylesheet" />
 </head>
+
 <body class="bg-gray-50">
     <!-- sidenav  -->
     @include('partials/left-side')
@@ -17,8 +19,9 @@
             <div class='w-full rounded-xl bg-white h-fit mx-auto'>
                 <div class="p-3">
                     <div class="flex justify-between">
-                        <h1 class="font-extrabold text-3xl">User</h1>
-                        <a class="p-2 bg-blue-500 rounded-xl text-white hover:text-black text-center" href="{{ route('adduser') }}">Add user</a>
+                        <h1 class="font-extrabold text-3xl">Category</h1>
+                        <a class="p-2 bg-blue-500 rounded-xl text-white hover:text-black text-center" href="{{ route('addcategory') }}">Add
+                            category</a>
                     </div>
                 </div>
                 <div class="p-2">
@@ -28,21 +31,25 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Date</th>
-                                    <th>Nama</th>
-                                    <th>Email</th>
+                                    <th>Name</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @each(item in users)
+                                @each(item in categories)
                                 <tr class="border-2">
                                     <td></td> <!-- Placeholder for the index -->
                                     <td>{{ item.createdAt }}</td>
-                                    <td>{{ item.fullName }}</td>
-                                    <td>{{ item.email }}</td>
-                                    <td class="">
+                                    <td>{{ item.name }}</td>
+                                    <td class="flex gap-2">
                                         <div class="w-full">
-                                            <a href="{{ route('deluser', { id: item.id }) }}">
+                                            <a href="{{ route('editcategory', { id: item.id }) }}">
+                                                <h1 class="p-2 text-white hover:text-black bg-blue-500 rounded-xl text-center">
+                                                    Edit</h1>
+                                            </a>
+                                        </div>
+                                        <div class="w-full">
+                                            <a href="{{ route('delcategory', { id: item.id }) }}">
                                                 <h1 class="text-white hover:text-black text-center p-2 bg-red-500 rounded-xl">
                                                     Delete</h1>
                                             </a>
@@ -57,7 +64,8 @@
             </div>
         </div>
     </main>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="//cdn.datatables.net/2.0.2/js/dataTables.min.js"></script>
     <script>
         $(document).ready(function () {
@@ -80,5 +88,7 @@
             });
         });
     </script>
+
 </body>
+
 </html>

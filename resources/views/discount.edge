@@ -43,13 +43,13 @@
                                     <td></td> <!-- Placeholder for the index -->
                                     <td>{{ item.createdAt }}</td>
                                     <td>{{ item.name }}</td>
-                                    <td>{{ item.percentage }}</td>
+                                    <td>{{ item.percentage }} %</td>
                                     <td class="flex gap-2">
                                         <div class="w-full">
-                                            <a href="">
+                                            <a href="{{ route('editdiscount', { id: item.id }) }}">
                                                 <h1
                                                     class="p-2 text-white hover:text-black bg-blue-500 rounded-xl text-center">
-                                                    Barcode</h1>
+                                                    Edit</h1>
                                             </a>
                                         </div>
                                         <div class="w-full">

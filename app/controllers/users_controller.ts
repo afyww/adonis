@@ -19,7 +19,7 @@ export default class UsersController {
 
   async edit({ view, params }: HttpContext) {
     const user = await User.findOrFail(params.id)
-    return view.render('edituser', { user: user })
+    return view.render('edituser', { user })
   }
 
   async update({ request, view, params }: HttpContext) {
