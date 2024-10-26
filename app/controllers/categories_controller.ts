@@ -7,7 +7,7 @@ interface CategoryData {
 
 export default class CategoriesController {
   async index({ view }: HttpContext) {
-    const categories = await Category.all()
+    const categories = await Category.query().preload('products')
     return view.render('category', { categories })
   }
 

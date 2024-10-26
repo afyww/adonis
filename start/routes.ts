@@ -11,6 +11,7 @@ const DiscountsController = () => import('#controllers/discounts_controller')
 // AUTH
 router.get('/', [AuthController, 'index']).as('index')
 router.post('/login', [AuthController, 'login']).as('login')
+router.get('/category', [CategoryController, 'index']).as('category')
 
 router
   .group(() => {
@@ -26,7 +27,6 @@ router
     router.get('/addproduct', [ProductController, 'create']).as('addproduct')
     router.post('/postproduct', [ProductController, 'store']).as('postproduct')
     //CATEGORY
-    router.get('/category', [CategoryController, 'index']).as('category')
     router.get('/addcategory', [CategoryController, 'create']).as('addcategory')
     router.post('/postcategory', [CategoryController, 'store']).as('postcategory')
     router.get('/editcategory/:id', [CategoryController, 'edit']).as('editcategory')

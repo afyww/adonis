@@ -20,7 +20,7 @@ export default class Product extends BaseModel {
   declare description: string
 
   @column()
-  declare category_id: number
+  declare categoryId: number
 
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime
